@@ -709,3 +709,15 @@ html.is-entering .curtain i{transform:scaleY(1);transform-origin:top;animation:c
 .cta .btn--ghost{--bg:transparent;--fill:#fff;--fill-fg:var(--ink);box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.55)}
 .cta .btn--ghost .arr{background:rgba(255,255,255,.18)}
 .cta .btn--ghost:hover .arr{background:var(--red)}
+
+/* call box (replaces booking form) */
+.callbox__list{list-style:none;padding:0;margin:0 0 22px;display:grid;gap:10px}
+.callbox__list li{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.04);box-shadow:inset 0 0 0 1px rgba(255,255,255,.09);color:#b8c0cf;line-height:1.5}
+.callbox__list b{font-family:var(--f-mono);font-size:12.5px;color:var(--red-hot);padding-top:3px;flex:none}
+.callbox__list strong{color:#fff}
+.callbox__call{width:100%;gap:12px}
+.callbox__mail{color:#fff;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+.mq-wrap{overflow-x:clip}
+
+/* prevent sideways scroll from reveal animations */
+main{overflow-x:clip}

@@ -101,8 +101,8 @@
     const els=scope.matches&&scope.matches('[data-count]')?[scope]:$$('[data-count]',scope);
     els.forEach(el=>{
       if(el.dataset.done) return; el.dataset.done=1;
-      const end=parseFloat(el.dataset.count), dec=(el.dataset.count.split('.')[1]||'').length, dur=1600, t0=performance.now();
-      const tick=t=>{ const k=Math.min(1,(t-t0)/dur), e=1-Math.pow(1-k,4); el.textContent=(end*e).toFixed(dec); if(k<1) requestAnimationFrame(tick); };
+      const end=parseFloat(el.dataset.count), dec=(el.dataset.count.split('.')[1]||'').length, dur=1600; let t0=null;
+      const tick=t=>{ if(t0===null) t0=t; const k=Math.min(1,Math.max(0,(t-t0)/dur)), e=1-Math.pow(1-k,4); el.textContent=(end*e).toFixed(dec); if(k<1) requestAnimationFrame(tick); };
       if(reduce) el.textContent=end.toFixed(dec); else requestAnimationFrame(tick);
     });
   }
